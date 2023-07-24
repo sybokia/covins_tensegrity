@@ -169,8 +169,8 @@ elif [ $CLIENT -eq 1 ]; then
         /bin/bash -c \
                 "cd ${CATKIN_WS}; \
                  source devel/setup.bash; \
-                 cd ${CATKIN_WS}/src/covins/orb_slam3/covins_examples ; \
-                 cp run.sh run_copy.sh; \
+                 cd ${CATKIN_WS}/src/covins/orb_slam3/covins_examples; \
+		         cp euroc_examples_mh1.sh run_copy.sh; \
                  sed -i '2d' run_copy.sh; \
                  sed -i '1apathDatasetEuroc="${CATKIN_WS}/Dataset"' run_copy.sh; \
                  sh run_copy.sh"
