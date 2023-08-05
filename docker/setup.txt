@@ -7,8 +7,10 @@ To start roscore in docker:
 ./run.sh -c
 
 To start the backend server: 
+./run_backend.sh OR
 ./run.sh -s ../covins_comm/config/config_comm.yaml ../covins_backend/config/config_backend.yaml
-results are linked via docker volume in covins/backend/output, path can be changed in covins/covins_backend/config/config_backend.yaml
+Results are linked via docker volume in /home/huanglab/results/covins/output
+The path can be changed in covins/covins_backend/config/config_backend.yaml on line 124
 
 
 FOR Monocular-Inertial with ROS ORB_SLAM3 agent
