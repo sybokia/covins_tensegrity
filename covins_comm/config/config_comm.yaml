@@ -5,8 +5,9 @@
 #--------------------------------------------------------------------------------------------
 
 sys.port: '9033' # should not be necessary to be changed
-# sys.server_ip: '192.168.1.19' # The (public) IP of the machine where the COVINS back-end is running
-sys.server_ip: '35.3.21.205' # Lab ThinkPad
+# The (public) IP of the machine where the COVINS back-end is running
+# sys.server_ip: '35.3.21.205'    # Lab ThinkPad
+sys.server_ip: '35.3.34.77'     # Zedbox #2
 #--------------------------------------------------------------------------------------------
 # Communicator
 #--------------------------------------------------------------------------------------------
@@ -21,7 +22,7 @@ comm.update_window_size: 5 # send only pose updates for the most n recently crea
 
 comm.to_agent_freq: 5 # freq. in Hz - data from server to agent
 
-comm.start_drift_estimation_after_kf: 100 #non-os
+comm.start_drift_estimation_after_kf: 200 #non-os
 
 #--------------------------------------------------------------------------------------------
 # ORB
