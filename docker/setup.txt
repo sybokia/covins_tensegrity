@@ -1,0 +1,43 @@
+FOR ALL SERVER AND AGENTS
+
+To set the backend server IP: 
+1. In covins/covins_comm/config/config_comm.yaml, change sys.server_ip
+
+To start roscore in docker: 
+./run.sh -c
+
+To start the backend server: 
+./run_backend.sh OR
+./run.sh -s ../covins_comm/config/config_comm.yaml ../covins_backend/config/config_backend.yaml
+Results are linked via docker volume in /home/huanglab/results/covins/output
+The path can be changed in covins/covins_backend/config/config_backend.yaml on line 124
+
+
+FOR Monocular-Inertial with ROS ORB_SLAM3 agent
+
+ROS naming conventions: 
+agent node name (mono inertial): 
+    /ORB_SLAM3_monoi1
+    /ORB_SLAM3_monoik
+    ...
+
+agent subscribed topic names: 
+    /cam0/image_raw1
+    /imu1
+    /cam0/image_rawk
+    /imuk
+    ...
+
+To configure an agent: 
+1. In covins/covins_comm/docker/orb_agent.sh, change ROS_MASTER_URI
+2. In covins/covins_comm/docker/orb_agent.sh, change ROS_IP
+2. In covins/covins_comm/docker/orb_agent.sh, change ABS_COVINS to the abs path to covins/
+
+To run an agent: 
+./orb_agent.sh k
+where k corresponds to the node/topic indexing
+
+
+Note: 
+euroc_play.sh and euroc_play_all.sh for ease of local benchmark tests
+can change comm.start_drift_estimation_after_kf and orb.imu_stamp_max_diff to improve performance 

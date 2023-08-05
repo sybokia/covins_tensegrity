@@ -121,6 +121,7 @@ if [ $SERVER -eq 1 ]; then
         --net=host \
         --volume "${CONFIG_FILE_COMM}:${CATKIN_WS}/src/covins/covins_comm/config/config_comm.yaml" \
         --volume "${CONFIG_FILE_BACKEND}:${CATKIN_WS}/src/covins/covins_backend/config/config_backend.yaml" \
+        --volume "/home/huanglab/results/covins/output/:${CATKIN_WS}/src/covins/covins_backend/output/" \
         covins \
         /bin/bash -c \
                 "cd ${CATKIN_WS}; \
