@@ -1,12 +1,15 @@
 # This is an auto generated Dockerfile for ros:desktop-full
 # generated from docker_images/create_ros_image.Dockerfile.em
-FROM osrf/ros:melodic-desktop-bionic
+# Changed base for arm64 Jetson. change bask when buliding on x86-64
+# FROM osrf/ros:melodic-desktop-bionic
+FROM arm64v8/ros:melodic-ros-base-bionic
 
 ENV CATKIN_WS=/root/covins_ws
 
 # fix keys see (https://github.com/googlecartographer/cartographer_ros/issues/1323)
-RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-RUN apt-key del 421C365BD9FF1F717815A3895523BAEEB01FA116
+# Not needed when building on arm64 Jetson. should uncomment when building on x86-64
+# RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+# RUN apt-key del 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 # install ros packages
 RUN apt-get update && apt-get install -y \
